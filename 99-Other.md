@@ -4,6 +4,24 @@
 
 ---
 
+#### References
+
+* Docs
+    
+    https://developer.xfce.org/thunar/index.html  
+    https://wiki.xfce.org/thunar/dev/build_and_run  
+    https://gitlab.xfce.org/xfce/thunar  
+    https://docs.xfce.org/xfce/thunar/start  
+
+* Build deps
+    
+    ```
+    sudo apt install libnotify-dev libgudev-1.0-dev libexo-2-dev
+    sudo apt install libxfconf-0-dev libxfce4util-dev libxfce4ui-2-dev libthunarx-3-dev
+    ```
+
+
+
 #### Biggest files
 
 ```
@@ -35,22 +53,10 @@ find . -type f -name "*.c" -printf "%s\t%p\n" | sort -nr | head -10
 
         launcher_activate_selected_files (launcher, THUNAR_LAUNCHER_CHANGE_DIRECTORY, NULL);
 
+#### Custom Actions
 
+xfce_spawn_on_screen_with_child_watch : executes external program
 
-#### References
-
-* Docs
-    
-    https://developer.xfce.org/thunar/index.html  
-    https://wiki.xfce.org/thunar/dev/build_and_run  
-    https://gitlab.xfce.org/xfce/thunar  
-    https://docs.xfce.org/xfce/thunar/start  
-
-* Build deps
-    
-    ```
-    sudo apt install libnotify-dev libgudev-1.0-dev libexo-2-dev
-    sudo apt install libxfconf-0-dev libxfce4util-dev libxfce4ui-2-dev libthunarx-3-dev
-    ```
+match patterns : g_pattern_match_simple
 
 

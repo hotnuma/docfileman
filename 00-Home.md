@@ -11,6 +11,8 @@
     The main function sets the application name, initializes libnotify and
     runs the application.
 
+
+
 #### Application
     
 * Description
@@ -32,85 +34,54 @@
     ```
     
     For example, LAUNCHER_ACTION_CREATE_FOLDER menu item calls _launcher_action_create_folder
-    then calls application_mkdir. Popup menus are created from the TreeView and StandardView
-    using g_object_new and appmenu_add_sections.
+    then calls application_mkdir.
+    
 
 
+#### Popup Menu
 
+* Description
 
-#### Menu
+    Popup menus are created from the TreeView and StandardView
+    using g_object_new and appmenu_add_sections. First, the Launcher
+    informations are filled, then the popup is created, then selecting
+    an item will call a launcher function on the corresponding Launcher
+    object.
 
-* thunar_tree_view_context_menu  
+* TreeView
+    
+    The menu is created from the widget's popup handler which calls the
+    treeview_popup_menu function and then _treeview_context_menu.
+    
+* StandardView
 
-    Create a THUNAR_TYPE_MENU object  
-    Set "selected-files" and current "current-directory" properties on the launcher.  
-    Call thunar_menu_add_sections and thunar_launcher_append_menu_item to build the menu.
-
-
-
-#### StandardView
-
-* thunar_standard_view_context_menu
-
-
-
-#### XfceGtkActionEntry
-
-Replacement for the deprecated GtkActionEntry  
-The idea is to provide a fixed list of XfceGtkActionEntrys  
-- use 'xfce_gtk_translate_action_entries' once to translate the list  
-- use 'xfce_gtk_accel_map_add_entries' once to register the provided accelerators  
-- use 'xfce_gtk_get_action_entry_by_id' to find a single entry, e.g. by using a enumeration  
-- use 'xfce_gtk_***_new_from_action_entry' to create the specific menu- or tool-items from the entry  
-
-In thunar-window.c : **`_window_actions`** are toolbar actions.
-
-In thunar-launcher.c : **`_launcher_actions`** are popup menu items.
-
-**_details_view_actions** configure columns
-
-**_standard_view_actions** : select files
-
-
-
-#### Custom Actions
-
-xfce_spawn_on_screen_with_child_watch : executes external program
-
-match patterns : g_pattern_match_simple
+    The widget creates its popup in response to a button-release-event signal,
+    it calls the _standard_view_button_release_event function and then it calls
+    standard_view_context_menu.
 
 
 
 #### Launcher
 
-* ThunarLauncher (ThunarActionManager)
-
-    ```
-    GObject
-    ╰── ThunarLauncher
-    ```
-
-* ThunarSendtoModel
-
-    https://developer.xfce.org/thunar/ThunarSendtoModel.html  
+* ThunarLauncher
     
+    ThunarActionManager
+
     GObject
-    ╰── ThunarSendtoModel
-
-
-* Window
-
-    ```
-    ╰── GtkWindow
-        ╰── Window
-    ```
     
-    thunar_window_init ()
 
-    creation of app window with all widgets
+
+#### Window
+
+* Description
+
+    GtkWindow
+    
+    thunar_window_init
     
     ```
     GtkWindow window
+    
         GtkGrid grid
             ___________________________________________________
             GtkToolbar toolbar
@@ -128,8 +99,5 @@ match patterns : g_pattern_match_simple
                     GtkStatusbar statusbar
             ___________________________________________________
     ```
-
-
-
 
 
