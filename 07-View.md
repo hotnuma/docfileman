@@ -4,8 +4,10 @@
 
 ---
 
-* ./thunar/thunar-details-view.c
-    
+#### ./thunar/thunar-details-view.c
+
+* Description
+
     206: thunar_details_view_init
     
     tree_view = exo_tree_view_new ();
@@ -24,9 +26,9 @@
                             G_CALLBACK (thunar_standard_view_selection_changed), details_view);
     ```
 
-
-
     
-* ./thunar/thunar_list_model.c
-    
+#### ./thunar/thunar_list_model.c
+
+* Description
+
     

@@ -4,7 +4,9 @@
 
 ---
 
-* ThunarChooserDialog
+#### ThunarChooserDialog
+
+* Description
 
     File Open / Save dialog box.
     
@@ -21,14 +23,18 @@
     thunar/thunar-file.c:1830:      thunar_show_chooser_dialog (parent, file, TRUE);
     thunar/thunar-file.c:1841:      thunar_show_chooser_dialog (parent, file, TRUE);
 
-* ThunarChooserModel
+#### ThunarChooserModel
+
+* Description
 
     ```
     ╰── GtkTreeStore
         ╰── ThunarChooserModel
     ```
 
-* ThunarChooserButton
+#### ThunarChooserButton
+
+* Description
 
     https://developer.xfce.org/thunar/ThunarChooserButton.html  
     

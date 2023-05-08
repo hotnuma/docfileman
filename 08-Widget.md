@@ -4,48 +4,45 @@
 
 ---
 
-#### Entry
+#### LocationBar
 
-* ThunarLocationEntry
-
-    https://developer.xfce.org/thunar/ThunarLocationEntry.html  
-
-    ```
-    ╰── GtkWidget
-        ╰── GtkContainer
-            ╰── GtkHBox
-                ╰── ThunarLocationEntry
-    ```
-
-
-* ThunarPathEntry
-
-    ╰── GtkWidget
-        ╰── GtkEntry
-            ╰── ThunarPathEntry
-
-    `thunar/thunar-location-entry.c:190:  location_entry->path_entry = thunar_path_entry_new ();`
-
-
-#### Image/Icon
-
-* ThunarImage
+* Description
     
-    https://developer.xfce.org/thunar/ThunarImage.html  
+    A GtkBin.
+
+
+#### LocationEntry
+
+* Description
+
+    A GtkBox.
+
+
+#### PathEntry
+
+* Description
     
-    ```
-    ╰── GtkWidget
-        ╰── GtkMisc
-            ╰── GtkImage
-                ╰── ThunarImage
-    ```
+    A GtkEntry.
+
+
+#### SizeLabel
+
+* Description
     
-    Contains a ThunarFileMonitor and a ThunarFile.
+    A GtkBox.
     
-    The icon used in ThunarPropertiesDialog :
+
+#### Statusbar
+
+* Description
     
-    ```
-    thunar/thunar-properties-dialog.c:285:  dialog->icon_image = thunar_image_new ();
-    ```
+    A GtkStatusbar.
+
+
+#### ThunarImage
+
+* Description
+    
+    A GtkImage used in the PropertiesDialog, it contains a FileMonitor and a ThunarFile.
 
 

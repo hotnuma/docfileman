@@ -44,3 +44,21 @@
     A GObject to cache icons and thumbnails.
 
 
+#### IconRenderer
+
+* Description
+    
+    A GtkCellRenderer to display TreeView and ListView icons.
+
+* Shortcut arrow in Thunar
+    
+    Thunar renders shortcut arrows the same way as emblems.
+    thunar_icon_renderer_render calls thunar_file_get_emblem_names which
+    adds a symbolic link emblem name.
+    
+    ```
+    if (thunar_file_is_symlink (file))
+        emblems = g_list_prepend (emblems, THUNAR_FILE_EMBLEM_NAME_SYMBOLIC_LINK);
+    ```
+
+

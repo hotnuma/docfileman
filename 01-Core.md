@@ -4,101 +4,92 @@
 
 ---
 
-#### Modules
-    
-* ThunarFile
-    
-    ```
-    GObject
-    ╰── ThunarFile
-    ```
-    
-    :973:thunar_file_info_reload.c
+#### Files
 
-    ```
-    file->collate_key = g_utf8_collate_key_for_filename (file->display_name, -1);
-    ```
-    
-    :4144:thunar_file_compare_by_name
+```
+    + core/clipboard.c
+    + core/devmonitor.c
+    + core/dnd.c
+    + core/fileinfo.c
+    + core/filemonitor.c
+    + core/th_device.c
+    + core/th_file.c
+    + core/th_folder.c
+    + core/user.c
+```
 
 
-* ThunarClipboardManager
-    
-    ```
-    GObject
-    ╰── ThunarClipboardManager
-    ```
-    
-    ```
-    thunar/thunar-launcher.c:1308:  ThunarClipboardManager   *clipboard;
-    thunar/thunar-launcher.c:2560:  ThunarClipboardManager *clipboard;
-    thunar/thunar-launcher.c:2577:  ThunarClipboardManager *clipboard;
-    thunar/thunar-launcher.c:2594:  ThunarClipboardManager *clipboard;
-    thunar/thunar-launcher.c:2608:  ThunarClipboardManager *clipboard;
-    thunar/thunar-icon-renderer.c:379:  ThunarClipboardManager *clipboard;
-    thunar/thunar-tree-view.c:181:  ThunarClipboardManager *clipboard;
-    thunar/thunar-window.c:304:  ThunarClipboardManager *clipboard;
-    ```
+#### User
+
+* Description
+
+    This module provides three objects, a global UserManager,
+    a ThunarGroup and ThunarUser. The PermissionBox uses it.
 
 
+#### ClipboardManager
 
+* Description
 
-
-
-
-* ThunarUserManager
-
-    https://developer.xfce.org/thunar/ThunarUserManager.html  
-
-    GObject
-    ├── ThunarGroup
-    ├── ThunarUser
-    ╰── ThunarUserManager
-
-    
-    
-* thunar-util
-    
-    https://developer.xfce.org/thunar/thunar-thunar-util.html  
-    
-#### Device Management
-
-* ThunarDevice
-
-    GObject
-    ╰── ThunarDevice
-
-* ThunarDeviceMonitor
-
-    GObject
-    ╰── ThunarDeviceMonitor
-
-* thunar-notify
-    
-    https://developer.xfce.org/thunar/thunar-thunar-notify.html  
-    
-    Functions using ThunarDevice etc...
-
-
-
-* ThunarFolder
-    
-    ```
-    GObject
-    ╰── ThunarFolder
-    ```
-    
-* ThunarFileMonitor
-
-    GObject
-    ╰── ThunarFileMonitor
+    A GObject to handle cut, copy, paste clipboard operations on files,
+    it uses GtkClipboard internally.
 
 
 #### DnD
 
-* thunar-dnd
+* Description
+
+    dnd_ask
     
-    GdkDragAction 	thunar_dnd_ask ()
-    gboolean 	thunar_dnd_perform ()
+    dnd_perform
+
+
+#### DeviceMonitor
+
+* Description
+
+    A global GObject to handle device events, it uses GVolumeMonitor
+    internally. ThunarDevice, TreeModel and Window use it.
+
+
+#### FileMonitor
+
+* Description
+
+    A global GObject to handle file events.
+
+
+#### ThunarDevice
+
+* Description
+
+    A GObject which uses a GVolume, GMount or GDrive to handle devices.
+
+
+#### ThunarFolder
+
+* Description
+
+    A GObject to handle folders which uses a ThunarJob and a FileMonitor.
+
+
+#### ThunarFile
+
+* Description
+
+    A GObject to handle file informations.
+
+    th_file_info_reload
+    
+    g_utf8_collate_key_for_filename
+    
+    th_file_compare_by_name
+
+
+#### FileInfo
+
+* Description
+
+    A GTypeInterface to handle file infos using GFile and GFileInfo.
 
 

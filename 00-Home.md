@@ -4,13 +4,25 @@
 
 ---
 
+#### Files
+
+```
++   application.c
++   appmenu.c
++   launcher.c
++   main.c
+    marshal.c
+    preferences.c
++   window.c
+```
+
+
 #### Main
 
 * Description
     
     The main function sets the application name, initializes libnotify and
     runs the application.
-
 
 
 #### Application
@@ -37,16 +49,43 @@
     then calls application_mkdir.
     
 
-
-#### Popup Menu
+#### Window
 
 * Description
 
-    Popup menus are created from the TreeView and StandardView
-    using g_object_new and appmenu_add_sections. First, the Launcher
-    informations are filled, then the popup is created, then selecting
-    an item will call a launcher function on the corresponding Launcher
-    object.
+    A GtkWindow filled in the window_init function.
+    
+    ```
+    GtkWindow
+        GtkGrid
+            _______________________________________
+            GtkToolbar
+                GtkToolItem
+                    LocationBar (GtkBox)
+                        ThunarPathEntry (GtkEntry)
+            _______________________________________
+            GtkPaned
+            pane1
+                window_install_sidepane
+                SidePane
+            pane2
+                GtkGrid
+                    GtkNotebook
+                    GtkStatusbar
+            _______________________________________
+    ```
+
+#### AppMenu
+
+* Description
+    
+    https://alexxcons.github.io/blogpost_1.html  
+
+    A GtkMenu used as a popup menu in the TreeView and the StandardView.
+    It's created using g_object_new and filled with appmenu_add_sections.
+    First, the Launcher informations are filled, then the popup is
+    created, then selecting an item will call a launcher function on
+    the corresponding Launcher object.
 
 * TreeView
     
@@ -60,44 +99,10 @@
     standard_view_context_menu.
 
 
-
-#### Launcher
-
-* ThunarLauncher
-    
-    ThunarActionManager
-
-    GObject
-    
-
-
-#### Window
+#### ThunarLauncher
 
 * Description
-
-    GtkWindow
     
-    thunar_window_init
-    
-    ```
-    GtkWindow window
-    
-        GtkGrid grid
-            ___________________________________________________
-            GtkToolbar toolbar
-                GtkToolItem tool_item
-                    LocationBar location_bar (GtkBox)
-                        ThunarPathEntry (GtkEntry)
-            ___________________________________________________
-            GtkPaned paned (horizontal)
-            pane1
-                window_install_sidepane
-                ThunarSidePane sidepane
-            pane2
-                GtkGrid view_box
-                    GtkNotebook notebook
-                    GtkStatusbar statusbar
-            ___________________________________________________
-    ```
+    A GObject used to execute menu actions.
 
 

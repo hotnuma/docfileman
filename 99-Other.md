@@ -16,10 +16,94 @@
 * Build deps
     
     ```
-    sudo apt install libnotify-dev libgudev-1.0-dev libexo-2-dev
-    sudo apt install libxfconf-0-dev libxfce4util-dev libxfce4ui-2-dev libthunarx-3-dev
+    libxfce4ui-2-dev
+    
+    libexo-2-dev
+    libgudev-1.0-dev
+    libnotify-dev
+    libthunarx-3-dev
+    libxfce4util-dev
+    libxfconf-0-dev
     ```
 
+
+#### Project files
+
+```
+find . -type f -name "*.c" | sort
+
+./core/clipman.c
+./core/devmon.c
+./core/dnd.c
+./core/fileinfo.c
+./core/filemon.c
+./core/th_device.c
+./core/th_file.c
+./core/th_folder.c
+./core/user.c
+
+./dialog/appchooser.c
+./dialog/appcombo.c
+./dialog/appmodel.c
+./dialog/dialogs.c
+./dialog/permbox.c
+./dialog/progressdlg.c
+./dialog/progressview.c
+./dialog/propsdlg.c
+
+./job/dcount_job.c
+./job/io_jobs.c
+./job/io_scan_directory.c
+./job/job.c
+./job/job_utils.c
+./job/simple_job.c
+./job/transfer_job.c
+
+./libext/exo_job.c
+./libext/exo_treeview.c
+./libext/gdk_ext.c
+./libext/gio_ext.c
+./libext/gtk_ext.c
+./libext/pango_ext.c
+./libext/pixbuf_ext.c
+./libext/utils.c
+
+./misc/appnotify.c
+./misc/browser.c
+./misc/component.c
+./misc/enumtypes.c
+./misc/history.c
+./misc/iconfactory.c
+./misc/iconrender.c
+./misc/navigator.c
+./misc/shortrender.c
+
+./side/sidepane.c
+./side/treemodel.c
+./side/treepane.c
+./side/treeview.c
+
+./view/baseview.c
+./view/columnmodel.c
+./view/detailview.c
+./view/listmodel.c
+./view/standardview.c
+
+./widget/locationbar.c
+./widget/locationentry.c
+./widget/pathentry.c
+./widget/sizelabel.c
+./widget/statusbar.c
+./widget/th_image.c
+
+./application.c
+./appmenu.c
+./launcher.c
+./main.c
+./marshal.c
+./preferences.c
+./window.c
+```
 
 
 #### Biggest files
@@ -40,7 +124,6 @@ find . -type f -name "*.c" -printf "%s\t%p\n" | sort -nr | head -10
 ```
 
 
-
 #### Notes
 
 * selection change
@@ -53,10 +136,10 @@ find . -type f -name "*.c" -printf "%s\t%p\n" | sort -nr | head -10
 
         launcher_activate_selected_files (launcher, THUNAR_LAUNCHER_CHANGE_DIRECTORY, NULL);
 
-#### Custom Actions
+* Custom Actions
 
-xfce_spawn_on_screen_with_child_watch : executes external program
+    xfce_spawn_on_screen_with_child_watch : executes external program
 
-match patterns : g_pattern_match_simple
+    match patterns : g_pattern_match_simple
 
 
