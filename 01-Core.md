@@ -44,6 +44,13 @@
     dnd_perform
 
 
+#### ThunarDevice
+
+* Description
+
+    A GObject which uses a GVolume, GMount or GDrive to handle devices.
+
+
 #### DeviceMonitor
 
 * Description
@@ -52,38 +59,17 @@
     internally. ThunarDevice, TreeModel and Window use it.
 
 
-#### FileMonitor
-
-* Description
-
-    A global GObject to handle file events.
-
-
-#### ThunarDevice
-
-* Description
-
-    A GObject which uses a GVolume, GMount or GDrive to handle devices.
-
-
-#### ThunarFolder
-
-* Description
-
-    A GObject to handle folders which uses a ThunarJob and a FileMonitor.
-
-
 #### ThunarFile
 
 * Description
 
-    A GObject to handle file informations.
+    A GObject to handle file informations. The th_file_info_reload function
+    loads these informations.
 
-    th_file_info_reload
-    
-    g_utf8_collate_key_for_filename
-    
-    th_file_compare_by_name
+* File sorting
+
+    The th_file_compare_by_name function calls g_utf8_collate_key_for_filename
+    to compare file names.
 
 
 #### FileInfo
@@ -91,5 +77,20 @@
 * Description
 
     A GTypeInterface to handle file infos using GFile and GFileInfo.
+
+
+#### ThunarFolder
+
+* Description
+
+    A GObject to handle folders which uses a ThunarJob, ThunarFile,
+    FileMonitor and GFileMonitor.
+
+
+#### FileMonitor
+
+* Description
+
+    A global GObject to handle file events.
 
 

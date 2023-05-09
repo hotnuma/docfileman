@@ -4,51 +4,77 @@
 
 ---
 
-#### ThunarChooserDialog
+#### Files
+
+```
+    + dialog/appchooser.c
+    + dialog/appcombo.c
+    + dialog/appmodel.c
+    + dialog/dialogs.c
+    + dialog/permbox.c
+    + dialog/progressdlg.c
+    + dialog/progressview.c
+    + dialog/propsdlg.c
+```
+
+
+#### Dialogs
 
 * Description
 
-    File Open / Save dialog box.
-    
-    ```
-    ╰── GtkWindow
-    ╰── GtkDialog
-        ╰── ThunarAbstractDialog
-            ╰── ThunarChooserDialog
-    ```
+    Several application dialogs such as dialog_insecure_program,
+    dialog_file_create, dialog_file_rename, dialog_folder_trash, etc...
 
-    thunar/thunar-launcher.c:782:          thunar_show_chooser_dialog (launcher->widget, lp->data, TRUE);
-    thunar/thunar-launcher.c:1244:    thunar_show_chooser_dialog (launcher->widget, launcher->files_to_process->data, TRUE);
-    thunar/thunar-dbus-service.c:454:  thunar_show_chooser_dialog (screen, file, open);
-    thunar/thunar-file.c:1830:      thunar_show_chooser_dialog (parent, file, TRUE);
-    thunar/thunar-file.c:1841:      thunar_show_chooser_dialog (parent, file, TRUE);
 
-#### ThunarChooserModel
+#### ProgressDialog
 
 * Description
 
-    ```
-    ╰── GtkTreeStore
-        ╰── ThunarChooserModel
-    ```
+    A GtkWindow for file operation progress dialog.
 
-#### ThunarChooserButton
+
+#### ProgressView
 
 * Description
 
-    https://developer.xfce.org/thunar/ThunarChooserButton.html  
-    
-    The "Open with" combo box in the properties dialog.  
-    
-    ```
-    ╰── GtkComboBox
-        ╰── ThunarChooserButton
-    ```
+    A GtkBox for file operation progress.
 
-    ```
-    thunar-properties-dialog.c : thunar_properties_dialog_init
-    
-    dialog->openwith_chooser = thunar_chooser_button_new ();
-    ```
+
+#### AppChooserDialog
+
+* Description
+
+    A GtkDialog to select an application.
+
+
+#### AppChooserModel
+
+* Description
+
+    A GtkTreeStore to handle applications. The appmodel_load function
+    fills the model using g_app_info_get_all_for_type.
+
+
+#### AppCombo
+
+* Description
+
+    A GtkComboBox to select an application, it calls
+    g_app_info_get_default_for_type and stores infos in a GtkListStore.
+    It's used in the properties dialog box.
+
+
+#### PropertiesDialog
+
+* Description
+
+    A GtkDialog created from the contextual popup menu.
+
+
+#### PermissionBox
+
+* Description
+
+    A GtkBox to display permission settings in the PropertiesDialog.
 
 

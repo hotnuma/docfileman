@@ -20,7 +20,7 @@
 #### Main
 
 * Description
-    
+
     The main function sets the application name, initializes libnotify and
     runs the application.
 

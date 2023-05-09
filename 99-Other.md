@@ -52,6 +52,7 @@ find . -type f -name "*.c" | sort
 ./dialog/propsdlg.c
 
 ./job/dcount_job.c
+./job/exo_job.c
 ./job/io_jobs.c
 ./job/io_scan_directory.c
 ./job/job.c
@@ -59,7 +60,6 @@ find . -type f -name "*.c" | sort
 ./job/simple_job.c
 ./job/transfer_job.c
 
-./libext/exo_job.c
 ./libext/exo_treeview.c
 ./libext/gdk_ext.c
 ./libext/gio_ext.c
