@@ -51,14 +51,14 @@ find . -type f -name "*.c" | sort
 ./dialog/progressview.c
 ./dialog/propsdlg.c
 
-./job/dcount_job.c
+./job/dcountjob.c
 ./job/exo_job.c
 ./job/io_jobs.c
-./job/io_scan_directory.c
+./job/io_scandir.c
 ./job/job.c
 ./job/job_utils.c
-./job/simple_job.c
-./job/transfer_job.c
+./job/simplejob.c
+./job/transferjob.c
 
 ./libext/exo_treeview.c
 ./libext/gdk_ext.c
@@ -111,14 +111,14 @@ find . -type f -name "*.c" | sort
 ```
 find . -type f -name "*.c" -printf "%s\t%p\n" | sort -nr | head -10
 
-127510	./view/standard_view.c
+127510	./view/standardview.c
 102177	./core/th_file.c
 95904	./menu/launcher.c
 70707	./view/listmodel.c
 70126	./side/treeview.c
 68427	./window.c
 60747	./side/treemodel.c
-60213	./job/transfer_job.c
+60213	./job/transferjob.c
 54371	./application.c
 50846	./dialog/permbox.c
 ```
