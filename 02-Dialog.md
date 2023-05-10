@@ -1,4 +1,4 @@
-**[ [Home](00-Home.html) | [Core](01-Core.html) | [Dialog](02-Dialog.html) | [Job](03-Job.html) | [Misc](05-Misc.html) | [Side](06-Side.html) | [View](07-View.html) | [Widget](08-Widget.html) | [Other](99-Other.html) ]**
+**[ [Home](00-Home.html) | [Core](01-Core.html) | Dialog | [Job](03-Job.html) | [Libext](04-Libext.html) | [Misc](05-Misc.html) | [Side](06-Side.html) | [View](07-View.html) | [Widget](08-Widget.html) | [Other](99-Other.html) ]**
 
 ## Dialog
 
@@ -7,14 +7,14 @@
 #### Files
 
 ```
-    + dialog/appchooser.c
-    + dialog/appcombo.c
-    + dialog/appmodel.c
     + dialog/dialogs.c
-    + dialog/permbox.c
     + dialog/progressdlg.c
     + dialog/progressview.c
+    + dialog/appchooser.c
+    + dialog/appmodel.c
+    + dialog/appcombo.c
     + dialog/propsdlg.c
+    + dialog/permbox.c
 ```
 
 

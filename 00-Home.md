@@ -1,4 +1,4 @@
-**[ [Home](00-Home.html) | [Core](01-Core.html) | [Dialog](02-Dialog.html) | [Job](03-Job.html) | [Misc](05-Misc.html) | [Side](06-Side.html) | [View](07-View.html) | [Widget](08-Widget.html) | [Other](99-Other.html) ]**
+**[ Home | [Core](01-Core.html) | [Dialog](02-Dialog.html) | [Job](03-Job.html) | [Libext](04-Libext.html) | [Misc](05-Misc.html) | [Side](06-Side.html) | [View](07-View.html) | [Widget](08-Widget.html) | [Other](99-Other.html) ]**
 
 ## Fileman
 
@@ -7,13 +7,13 @@
 #### Files
 
 ```
-+   application.c
-+   appmenu.c
-+   launcher.c
-+   main.c
-    marshal.c
-    preferences.c
-+   window.c
+    +   main.c
+    +   application.c
+    +   window.c
+    +   appmenu.c
+    +   launcher.c
+        marshal.c
+        preferences.c
 ```
 
 
@@ -62,7 +62,7 @@
             GtkToolbar
                 GtkToolItem
                     LocationBar (GtkBox)
-                        ThunarPathEntry (GtkEntry)
+                        PathEntry (GtkEntry)
             _______________________________________
             GtkPaned
             pane1
