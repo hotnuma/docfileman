@@ -4,3 +4,43 @@
 
 ---
 
+#### Files
+
+```
+    + side/sidepane.c
+    + side/treepane.c
+    + side/treeview.c
+    + side/treemodel.c
+```
+
+
+#### SidePane
+
+* Description
+
+    A GTypeInterface virtual class with show hidden methods.
+
+
+#### TreePane
+
+* Description
+
+    A GtkScrolledWindow which implements Navigator, Component and
+    SidePane interfaces.
+
+
+#### TreeView
+
+* Description
+
+    A GtkTreeView for the left pane.
+
+
+
+#### TreeModel
+
+* Description
+
+    A GObject which implements a GtkTreeView.
+
+

@@ -4,31 +4,52 @@
 
 ---
 
-#### ./thunar/thunar-details-view.c
+#### Files
+
+```
+    + view/baseview.c
+    + view/standardview.c
+    + view/detailview.c
+    + view/listmodel.c
+    + view/columnmodel.c
+```
+
+
+#### BaseView
 
 * Description
 
-    206: thunar_details_view_init
-    
-    tree_view = exo_tree_view_new ();
+    A GTypeInterface to implement as a base list view.
 
-    click in the detail view
-    
-    646: thunar_details_view_button_press_event
 
-    ```
-    thunar_details_view_init:
-    
-    /* configure the tree selection */
-    selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
-    gtk_tree_selection_set_mode (selection, GTK_SELECTION_MULTIPLE);
-    g_signal_connect_swapped (G_OBJECT (selection), "changed",
-                            G_CALLBACK (thunar_standard_view_selection_changed), details_view);
-    ```
-
-    
-#### ./thunar/thunar_list_model.c
+#### StandardView
 
 * Description
 
-    
+    A GtkScrolledWindow which implements the Navigator, Component
+    and BaseView interfaces.
+
+
+#### DetailView
+
+* Description
+
+    A StandardView containing an ExoTreeView.
+
+
+#### ListModel
+
+* Description
+
+    A GObject which implements GtkTreeModel, GtkTreeDragDest,
+    and GtkTreeSortable. It's the model used by the ExoTreeView
+    to display files.
+
+
+#### ColumnModel
+
+* Description
+
+    A GObject which implements GtkTreeModel.
+
+

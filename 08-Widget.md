@@ -4,6 +4,18 @@
 
 ---
 
+#### Files
+
+```
+    + widget/locationbar.c
+    + widget/locationentry.c
+    + widget/pathentry.c
+    + widget/sizelabel.c
+    + widget/statusbar.c
+    + widget/th_image.c
+```
+
+
 #### LocationBar
 
 * Description
