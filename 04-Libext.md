@@ -7,7 +7,6 @@
 #### Files
 
 ```
-    libext/exo_treeview.c
     libext/gdk_ext.c
     libext/gio_ext.c
     libext/gtk_ext.c

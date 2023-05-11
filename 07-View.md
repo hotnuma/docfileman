@@ -9,6 +9,7 @@
 ```
     + view/baseview.c
     + view/standardview.c
+    + view/exotreeview.c
     + view/detailview.c
     + view/listmodel.c
     + view/columnmodel.c
@@ -28,6 +29,13 @@
 
     A GtkScrolledWindow which implements the Navigator, Component
     and BaseView interfaces.
+
+
+#### ExoTreeView
+
+* Description
+
+    A GtkTreeView with extended rubber banding and single click activate.
 
 
 #### DetailView

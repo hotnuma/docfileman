@@ -32,15 +32,15 @@
 ```
 find . -type f -name "*.c" | sort
 
-./core/clipman.c
-./core/devmon.c
+./core/clipboard.c
+./core/devmonitor.c
 ./core/dnd.c
 ./core/fileinfo.c
-./core/filemon.c
+./core/filemonitor.c
 ./core/th_device.c
 ./core/th_file.c
 ./core/th_folder.c
-./core/user.c
+./core/usermanager.c
 
 ./dialog/appchooser.c
 ./dialog/appcombo.c
@@ -56,11 +56,10 @@ find . -type f -name "*.c" | sort
 ./job/io_jobs.c
 ./job/io_scandir.c
 ./job/job.c
-./job/job_utils.c
+./job/jobutils.c
 ./job/simplejob.c
 ./job/transferjob.c
 
-./libext/exo_treeview.c
 ./libext/gdk_ext.c
 ./libext/gio_ext.c
 ./libext/gtk_ext.c
@@ -86,6 +85,7 @@ find . -type f -name "*.c" | sort
 ./view/baseview.c
 ./view/columnmodel.c
 ./view/detailview.c
+./view/exotreeview.c
 ./view/listmodel.c
 ./view/standardview.c
 
@@ -98,6 +98,8 @@ find . -type f -name "*.c" | sort
 
 ./application.c
 ./appmenu.c
+./config.h
+./debug.h
 ./launcher.c
 ./main.c
 ./marshal.c
