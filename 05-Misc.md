@@ -7,33 +7,31 @@
 #### Files
 
 ```
-    + misc/appnotify.c
-    + misc/browser.c
-    + misc/component.c
-    misc/navigator.c
+    + misc/navigator.c
     + misc/history.c
+    + misc/component.c
+    + misc/browser.c
     + misc/iconfactory.c
     + misc/iconrender.c
-    misc/shortrender.c
-    misc/enumtypes.c
+    + misc/shortrender.c
+    + misc/enumtypes.c
 ```
 
 
-#### app_notify
+#### ThunarNavigator
 
 * Description
-    
-    Functions to display notification messages such as unmount notifications.
+
+    GTypeInterface to handle current directory. Launcher, History, TreePane
+    TreeView, StandardView, LocationBar and LocationEntry, implement it.
 
 
-#### ThunarBrowser
-    
+#### ThunarHistory
+
 * Description
 
-    A GInterface used by Application, LocationEntry and Launcher to
-    resolve a file before launching it. For example, Application calls
-    browser_poke_file to resolve a file given on the command line and
-    then launch it in a callback using th_file_launch.
+    A GObject to handle back, forward browse history. ThunarHistory
+    implements a ThunarNavigator interface.
 
 
 #### ThunarComponent
@@ -44,12 +42,14 @@
     implement it.
 
 
-#### ThunarHistory
+#### ThunarBrowser
 
 * Description
 
-    A GObject to handle back, forward browse history. ThunarHistory
-    implements a ThunarNavigator interface.
+    A GInterface used by Application, LocationEntry and Launcher to
+    resolve a file before launching it. For example, Application calls
+    browser_poke_file to resolve a file given on the command line and
+    then launch it in a callback using th_file_launch.
 
 
 #### IconFactory
@@ -62,7 +62,7 @@
 #### IconRenderer
 
 * Description
-    
+
     A GtkCellRenderer to display TreeView and ListView icons.
 
 * Shortcut arrow in Thunar
@@ -72,8 +72,43 @@
     adds a symbolic link emblem name.
     
     ```
-    if (thunar_file_is_symlink (file))
-        emblems = g_list_prepend (emblems, THUNAR_FILE_EMBLEM_NAME_SYMBOLIC_LINK);
+    thunar_icon_renderer_render :
+        if (G_LIKELY (icon_renderer->emblems))
+            emblems = thunar_file_get_emblem_names (icon_renderer->file);
+
+    thunar_file_get_emblem_names :
+        if (thunar_file_is_symlink(file))
+            emblems = g_list_prepend(emblems, THUNAR_FILE_EMBLEM_NAME_SYMBOLIC_LINK);
     ```
+
+#### ShortcutRenderer
+
+* Description
+
+    An IconRenderer used in the TreeView.
+
+
+#### enumtypes
+
+* Description
+    
+    Application's enums.
+
+    ```
+    ThunarColumn
+    ThunarDateStyle
+    ThunarFileMode
+    ThunarJobResponse
+    ParallelCopyMode
+    ThunarRecursivePermissionsMode
+    ThunarIconSize
+    ThunarZoomLevel
+    ThunarThumbnailMode
+    ThunarThumbnailSize
+    ```
+
+<br>
+<br>
+<br>
 
 

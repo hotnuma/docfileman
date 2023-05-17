@@ -7,22 +7,46 @@
 #### Files
 
 ```
-    +   main.c
+    +   launcher.c
+    +   appmenu.c
     +   application.c
     +   window.c
-    +   appmenu.c
-    +   launcher.c
+    +   main.c
         marshal.c
         preferences.c
 ```
 
 
-#### Main
+#### ThunarLauncher
 
 * Description
+    
+    A GObject used to execute actions from particular widgets. Window,
+    and TreeView have a ThunarLauncher.
+    
+    
+#### AppMenu
 
-    The main function sets the application name, initializes libnotify and
-    runs the application.
+* Description
+    
+    https://alexxcons.github.io/blogpost_1.html  
+
+    A GtkMenu used as a popup menu in the TreeView and the StandardView.
+    It's created using g_object_new and filled with appmenu_add_sections.
+    First, the Launcher informations are filled, then the popup is
+    created, then selecting an item will call a launcher function on
+    the corresponding Launcher object.
+
+* TreeView
+    
+    The menu is created from the widget's popup handler which calls the
+    treeview_popup_menu function and then _treeview_context_menu.
+    
+* StandardView
+
+    The widget creates its popup in response to a button-release-event signal,
+    it calls the _standard_view_button_release_event function and then it calls
+    standard_view_context_menu.
 
 
 #### Application
@@ -75,34 +99,16 @@
             _______________________________________
     ```
 
-#### AppMenu
+
+#### Main
 
 * Description
-    
-    https://alexxcons.github.io/blogpost_1.html  
 
-    A GtkMenu used as a popup menu in the TreeView and the StandardView.
-    It's created using g_object_new and filled with appmenu_add_sections.
-    First, the Launcher informations are filled, then the popup is
-    created, then selecting an item will call a launcher function on
-    the corresponding Launcher object.
+    The main function sets the application name, initializes libnotify and
+    runs the application.
 
-* TreeView
-    
-    The menu is created from the widget's popup handler which calls the
-    treeview_popup_menu function and then _treeview_context_menu.
-    
-* StandardView
-
-    The widget creates its popup in response to a button-release-event signal,
-    it calls the _standard_view_button_release_event function and then it calls
-    standard_view_context_menu.
-
-
-#### ThunarLauncher
-
-* Description
-    
-    A GObject used to execute menu actions.
+<br>
+<br>
+<br>
 
 

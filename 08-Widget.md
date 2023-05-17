@@ -34,7 +34,7 @@
 
 * Description
     
-    A GtkEntry.
+    A GtkEntry which uses a ListModel to store files.
 
 
 #### SizeLabel
@@ -56,5 +56,9 @@
 * Description
     
     A GtkImage used in the PropertiesDialog, it contains a FileMonitor and a ThunarFile.
+
+<br>
+<br>
+<br>
 
 

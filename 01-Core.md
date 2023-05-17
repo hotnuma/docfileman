@@ -7,24 +7,27 @@
 #### Files
 
 ```
-    + core/user.c
+    + core/appnotify.c
     + core/clipboard.c
     + core/dnd.c
-    + core/th_device.c
+    + core/user.c
+    
     + core/devmonitor.c
+    + core/th_device.c
+    
+    + core/filemonitor.c
+    + core/th_folder.c
     + core/th_file.c
     + core/fileinfo.c
-    + core/th_folder.c
-    + core/filemonitor.c
 ```
 
 
-#### User
+#### app_notify
 
 * Description
-
-    This module provides three objects, a global UserManager,
-    a ThunarGroup and ThunarUser. The PermissionBox uses it.
+    
+    Functions to display notification message, ThunarDevice uses it
+    to display unmount and ejects notifications.
 
 
 #### ClipboardManager
@@ -44,11 +47,12 @@
     dnd_perform
 
 
-#### ThunarDevice
+#### User
 
 * Description
 
-    A GObject which uses a GVolume, GMount or GDrive to handle devices.
+    This module provides three objects, a global UserManager,
+    a ThunarGroup and ThunarUser. The PermissionBox uses it.
 
 
 #### DeviceMonitor
@@ -59,24 +63,18 @@
     internally. ThunarDevice, TreeModel and Window use it.
 
 
-#### ThunarFile
+#### ThunarDevice
 
 * Description
 
-    A GObject to handle file informations. The th_file_info_reload function
-    loads these informations.
-
-* File sorting
-
-    The th_file_compare_by_name function calls g_utf8_collate_key_for_filename
-    to compare file names.
+    A GObject which uses a GVolume, GMount or GDrive to handle devices.
 
 
-#### FileInfo
+#### FileMonitor
 
 * Description
 
-    A GTypeInterface to handle file infos using GFile and GFileInfo.
+    A global GObject to handle file events.
 
 
 #### ThunarFolder
@@ -87,10 +85,28 @@
     FileMonitor and GFileMonitor.
 
 
-#### FileMonitor
+#### FileInfo
 
 * Description
 
-    A global GObject to handle file events.
+    A GTypeInterface to handle file infos using GFile and GFileInfo.
+
+
+#### ThunarFile
+
+* Description
+
+    An implementation of FileInfo. _th_file_load and _th_file_info_load functions
+    load these informations.
+
+* File sorting
+
+    The th_file_compare_by_name function calls g_utf8_collate_key_for_filename
+    to compare file names.
+
+
+<br>
+<br>
+<br>
 
 
