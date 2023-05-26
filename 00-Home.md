@@ -16,6 +16,14 @@
         preferences.c
 ```
 
+* Description
+    
+    When the application starts, application_command_line si called and parses
+    the command line. Then the following are called, application_process_filenames,
+    _application_process_files, browser_poke_file, _application_process_files_finish,
+    th_file_launch. Then application_open_window is called with the current directory
+    to parse. The AppWindow is created and window_set_current_directory is called.
+
 
 #### ThunarLauncher
 
