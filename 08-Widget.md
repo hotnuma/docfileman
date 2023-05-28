@@ -1,3 +1,5 @@
+<link href="style.css" rel="stylesheet"></link>
+
 **[ [Home](00-Home.html) | [Core](01-Core.html) | [Dialog](02-Dialog.html) | [Job](03-Job.html) | [Libext](04-Libext.html) | [Misc](05-Misc.html) | [Side](06-Side.html) | [View](07-View.html) | Widget | [Other](99-Other.html) ]**
 
 ## Widget
