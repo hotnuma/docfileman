@@ -14,18 +14,33 @@
     +   application.c
     +   window.c
     +   main.c
-        marshal.c
         preferences.c
 ```
 
 * Description
     
-    When the application starts, application_command_line si called and parses
-    the command line. Then the following are called, application_process_filenames,
-    _application_process_files, browser_poke_file, _application_process_files_finish,
-    th_file_launch. Then application_open_window is called with the current directory
-    to parse. The AppWindow is created and window_set_current_directory is called.
+    When the application starts, **application_command_line** si called and parses
+    the command line. Then the following are called, **application_process_filenames**,
+    **_application_process_files**, **browser_poke_file**, **_application_process_files_finish**,
+    **th_file_launch**.
+    
+    Then **application_open_window** is called with the current directory
+    to parse. The AppWindow is created and **window_set_current_directory** is called.
 
+* Interfaces
+    
+    FileInfo : base class for ThunarFile
+    
+    ThunarBrowser : base class to browse, file, device and location
+    
+    ThunarComponent : handles selected files
+    
+    ThunarNavigator : handles the current directory
+    
+    SidePane : base class to handle show/hide property
+    
+    BaseView : base class for the StandardView
+    
 
 #### ThunarLauncher
 
@@ -90,6 +105,7 @@
     A GtkWindow filled in the window_init function.
     
     ```
+    
     GtkWindow
         GtkGrid
             _______________________________________
@@ -106,7 +122,7 @@
                 GtkGrid
                     GtkNotebook
                     GtkStatusbar
-            _______________________________________
+                    
     ```
 
 
