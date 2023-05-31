@@ -22,15 +22,16 @@
 
 * Description
 
-    A GTypeInterface to implement as a base list view.
+    A GTypeInterface to implement a base list view.
 
 
 #### StandardView
 
 * Description
 
-    A GtkScrolledWindow which implements the Navigator, Component
-    and BaseView interfaces.
+    A GtkScrolledWindow which implements a Navigator, Component
+    and BaseView interface. It contains a DetailView, it can create
+    a select by pattern dialog box.
 
 
 #### ExoTreeView
