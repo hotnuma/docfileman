@@ -1,6 +1,9 @@
+/*
+20250221
+*/
 
 body {
-  margin: 0px 30px 30px 30px;
+    margin: 20px;
 }
 
 table {
@@ -9,30 +12,26 @@ table {
 } 
 
 th {
-    vertical-align: top;
-    border: 2px solid #69899F;
-    padding: 5px;
     font-weight: bold;
+    vertical-align: top;
+    border: 2px solid #3c4f5d;
+    padding: 6px;
+    background-color: c1ced7;
 }
 
 td {
     vertical-align: top;
     border:1px dotted #000000;
-    padding: 15px;
+    padding: 6px;
 }
+
+ul, li {
+    margin-left: -5px;
+}
+
+/* dbdbdb */
 
 code, pre {
-      background-color: #dbdbdb;
-   }
-   
-.txgreen {
-      background-color: #88ff75;
-   }
-
-.lidisc {
-    list-style-type: disc;
-    margin-left: 15px;
-    padding-left: 0px;
+    background-color: #D9E6FF;
 }
-
-
+   

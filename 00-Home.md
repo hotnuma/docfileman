@@ -9,12 +9,12 @@
 #### Files
 
 ```
-    +   launcher.c
-    +   appmenu.c
     +   application.c
-    +   window.c
+    +   appmenu.c
+    +   launcher.c
     +   main.c
         preferences.c
+    +   window.c
 ```
 
 * Description
@@ -42,38 +42,6 @@
     BaseView : base class for the StandardView
     
 
-#### ThunarLauncher
-
-* Description
-    
-    A GObject used to execute actions from particular widgets. Window,
-    and TreeView have a ThunarLauncher.
-    
-    
-#### AppMenu
-
-* Description
-    
-    https://alexxcons.github.io/blogpost_1.html  
-
-    A GtkMenu used as a popup menu in the TreeView and the StandardView.
-    It's created using g_object_new and filled with appmenu_add_sections.
-    First, the Launcher informations are filled, then the popup is
-    created, then selecting an item will call a launcher function on
-    the corresponding Launcher object.
-
-* TreeView
-    
-    The menu is created from the widget's popup handler which calls the
-    treeview_popup_menu function and then _treeview_context_menu.
-    
-* StandardView
-
-    The widget creates its popup in response to a button-release-event signal,
-    it calls the _standard_view_button_release_event function and then it calls
-    standard_view_context_menu.
-
-
 #### Application
     
 * Description
@@ -98,34 +66,38 @@
     then calls application_mkdir.
     
 
-#### Window
+#### AppMenu
 
 * Description
-
-    A GtkWindow filled in the window_init function.
     
-    ```
+    https://alexxcons.github.io/blogpost_1.html  
+
+    A GtkMenu used as a popup menu in the TreeView and the StandardView.
+    It's created using g_object_new and filled with appmenu_add_sections.
+    First, the Launcher informations are filled, then the popup is
+    created, then selecting an item will call a launcher function on
+    the corresponding Launcher object.
+
+* TreeView
     
-    GtkWindow
-        GtkGrid
-            _______________________________________
-            GtkToolbar
-                GtkToolItem
-                    LocationBar (GtkBox)
-                        PathEntry (GtkEntry)
-            _______________________________________
-            GtkPaned
-            pane1
-                window_install_sidepane
-                SidePane
-            pane2
-                GtkGrid
-                    GtkNotebook
-                    GtkStatusbar
-                    
-    ```
+    The menu is created from the widget's popup handler which calls the
+    treeview_popup_menu function and then _treeview_context_menu.
+    
+* StandardView
+
+    The widget creates its popup in response to a button-release-event signal,
+    it calls the _standard_view_button_release_event function and then it calls
+    standard_view_context_menu.
 
 
+#### Launcher
+
+* Description
+    
+    A GObject used to execute actions from particular widgets. Window,
+    and TreeView have a ThunarLauncher.
+    
+    
 #### Main
 
 * Description
@@ -133,7 +105,31 @@
     The main function sets the application name, initializes libnotify and
     runs the application.
 
-<br>
+#### Window
+
+* Description
+
+    A GtkWindow filled in the window_init function.
+    
+    ```
+    GtkWindow
+        GtkGrid
+            --------------------------------------
+            GtkToolbar
+                GtkToolItem
+                    LocationBar (GtkBox)
+                        PathEntry (GtkEntry)
+            --------------------------------------
+            GtkPaned
+                pane1
+                    window_install_sidepane
+                    SidePane
+                pane2
+                    GtkGrid
+                        GtkNotebook
+            --------------------------------------
+            GtkStatusbar
+    ```
 <br>
 <br>
 
